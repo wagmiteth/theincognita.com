@@ -1,0 +1,115 @@
+
+
+:root {
+  --color-black: #030303;
+  --color-green: #10A267;
+  --color-yellow: #FEC901;
+  --color-teal: #009292;
+  --color-purple: #B287FD;
+  --color-background: #FFDCA8;
+  --color-white: #FFFFFF;
+  --color-hover-gray: #D3CFCF;
+}
+
+html,
+body {
+  background-color: var(--color-background);
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  font-family: 'Inria Sans', sans-serif;
+}
+.wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+
+p, span {
+  font-family: 'Inria Sans', sans-serif;
+  color: var(--color-black);
+  font-size: 18px;
+  font-weight: 400;
+
+}
+
+
+h1, h2, h3, h4 {
+  font-family: 'Bebas Neue', sans-serif;
+  color: var(--color-black);
+  margin: 0px;
+}
+
+h5, h6 {
+  font-family: 'Inria Sans', sans-serif;
+  color: var(--color-black);
+  margin: 0px;
+}
+
+h1 {
+  font-size: 86px;
+  font-weight: 400;
+  letter-spacing: -0.86px;
+  line-height: normal;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+h3 {
+  font-size: 26px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+h4 {
+
+}
+
+h5 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+a {
+  font-family: 'Inria Sans', sans-serif;
+  color: var(--color-purple);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.upper-col {
+  display: flex;
+  padding-top: 166px;
+}
+
+.cta-btns{
+  display: flex;
+  gap: 74px;
+  padding-top: 56px;
+}
+
+.arrow{
+  padding-top: 16px;
+}
+
+.lower-col{
+  display: flex;
+  justify-content: space-between;
+}
+.lower-left-col{
+  display: flex;
+  width: 40%;
+}
+
+.lower-right-col{
+  display: flex;
+}

@@ -1,0 +1,163 @@
+/* global.css */
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+:root {
+  --color-black: #030303;
+  --color-green: #10a267;
+  --color-yellow: #fec901;
+  --color-teal: #009292;
+  --color-purple: #b287fd;
+  --color-background: #ffdca8;
+  --color-white: #ffffff;
+  --color-hover-gray: #d3cfcf;
+}
+
+html,
+body, #__next  {
+  background-color: var(--color-background);
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  font-family: "Inria Sans", sans-serif;
+}
+.wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 8px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+}
+
+p,
+span {
+  font-family: "Inria Sans", sans-serif;
+  color: var(--color-black);
+  font-size: 18px;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Bebas Neue", sans-serif;
+  color: var(--color-black);
+  margin: 0px;
+}
+
+h5,
+h6 {
+  font-family: "Inria Sans", sans-serif;
+  color: var(--color-black);
+  margin: 0px;
+}
+
+h1 {
+  font-size: 86px;
+  font-weight: 400;
+  letter-spacing: -0.86px;
+  line-height: normal;
+}
+
+h2 {
+  font-size: 30px;
+  margin: 12px 0;
+  font-weight: 400;
+  line-height: normal;
+}
+button h2, .container h2 {
+  margin: 0; /* Override margin for h3 inside a button */
+}
+
+h3 {
+  font-size: 26px;
+  margin: 14px 0;
+  font-weight: 400;
+  line-height: normal;
+}
+button h3, .container h3 {
+  margin: 0; /* Override margin for h3 inside a button */
+}
+
+h4 {
+  font-size: 24px;
+  margin: 12px 0;
+  font-weight: 400;
+  line-height: normal;
+}
+button h4, .container h4 {
+  margin: 0; /* Override margin for h3 inside a button */
+}
+
+h5 {
+  font-size: 20px;
+  margin: 10px 0;
+  font-weight: 400;
+  line-height: normal;
+}
+button h5, .container h5  {
+  margin: 0; /* Override margin for h3 inside a button */
+}
+
+a {
+  font-family: inherit;
+  color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.upper-col {
+  display: flex;
+  padding-top: 166px;
+}
+
+.cta-btns {
+  display: flex;
+  gap: 74px;
+  padding-top: 56px;
+}
+
+.arrow {
+  padding-top: 16px;
+}
+
+.lower-col {
+  display: flex;
+  justify-content: space-between;
+}
+.lower-left-col {
+  display: flex;
+  width: 40%;
+  margin-right: 20px;
+}
+
+.lower-middle-col {
+  width: 2px;
+  background-color: black;
+}
+
+.lower-right-col {
+  display: flex;
+}
+
+
+/* Special Tailwind */
+.gap-y-2px > * + * {
+  margin-top: 2px !important;
+}
+
+.popup-form{
+  z-index: 999;
+}
