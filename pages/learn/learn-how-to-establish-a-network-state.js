@@ -2,11 +2,18 @@ import React from "react";
 import Image from "next/image";
 import learnNetworkState from "../../src/img/How-to-establish-a-Network-State.jpeg";
 import CTAButton from "../../components/CTAButton";
+import Head from 'next/head';
+
 
 function networkstate() {
   return (
     <div className="HowToEstablishANetworkState-page">
       <div className="pt-40">
+      <Head>
+        <title>
+      Startup Society | Network Union | Network Archipelago | Network State
+    </title>
+      </Head>
         <Image
           src={learnNetworkState}
           alt="Black and white globe with nodes"

@@ -1,9 +1,14 @@
+import Head from 'next/head';
+
 import CTAButton from "../components/CTAButton";
 
 
 function dao() {
   return (
     <div className="pt-40">
+      <Head>
+        <title>DAO | The Incognita</title>
+      </Head>
       <h1>The Incognita DAO</h1>
             <p>
               The incognita is built by the community. If you believe in our

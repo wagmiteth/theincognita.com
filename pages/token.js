@@ -1,9 +1,13 @@
 import CTAButton from "../components/CTAButton";
+import Head from 'next/head';
 
 
 function token() {
   return (
     <div className="pt-40">
+      <Head>
+        <title>Token | The Incognita</title>
+      </Head>
       <h1>Token</h1>
       <p>To be announced. Join Discord to stay updated! 👋</p>
       <div className="pt-10">

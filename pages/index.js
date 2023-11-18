@@ -1,4 +1,5 @@
 // index.js
+import Head from 'next/head';
 
 import React, { useState } from "react";
 import CTAButton from "../components/CTAButton";
@@ -25,6 +26,9 @@ const Home = () => {
   };
   return (
     <div>
+      <Head>
+        <title>The Incognita | - Open source dasboard for Network States</title>
+      </Head>
       <main>
         <div className="upper-col">
           <div className="upper-left-col">
