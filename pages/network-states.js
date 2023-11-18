@@ -1,7 +1,8 @@
 // network-states.js
 import React, { useState } from 'react';
-import CTAButton from "../components/CTAButton";
 import TableHomepage from "../components/TableHomepage";
+import Head from 'next/head';
+
 
 function NetworkStates() {
     const [isOpen1, setIsOpen1] = useState(false);
@@ -15,6 +16,9 @@ function NetworkStates() {
 
   return (
     <div className="pt-40">
+       <Head>
+        <title>Network States | Full list with links & statistics </title>
+      </Head>
       <h1>Network States</h1>
             <p>
             A network state represents a tight digital community possessing the ability for united action. This entity engages in global fundraising efforts to secure physical territory, with the ultimate goal of attaining diplomatic acknowledgment from established states. Here is a comprehensive list of all Network States, complete with detailed information, relevant links, and accompanying statistics.
@@ -23,27 +27,22 @@ function NetworkStates() {
               <a href="https://discord.gg/EyvF2fEqWT"> Subscribe</a> for updates or apply to get listed.
         </p>
         <TableHomepage />
-
-      <div className="pt-10">
-      <a href="https://discord.gg/EyvF2fEqWT" target="_blank" rel="noopener noreferrer">
-                <CTAButton bgColor="var(--color-white)">
-                  <h2>Join Discord</h2>
-                </CTAButton>
-              </a>
-      </div>
       <h2>The Network State book Balaji Srinivasan</h2>
       <p>
       Starting a new country according to Balaji in the concepts outlined on The Network State book involves the establishment and development of what&apos;s called a Network State A network state is a highly aligned online community with a capacity for collective action that crowdfunds territory around the world and eventually gains diplomatic recognition from pre-existing states. Here&apos;s a more detailed breakdown of the stages and characteristics:        <a href= "https://thenetworkstate.com/"target="_blank"> here.</a>
       </p>
       <h2>How to start a new country?</h2>
       <p>
-      Starting a new country according to Balaji in the concepts outlined on The Network State book involves the establishment and development of what&apos;s called a Network State A network state is a highly aligned online community with a capacity for collective action that crowdfunds territory around the world and eventually gains diplomatic recognition from pre-existing states. Here&apos;s a more detailed breakdown of the stages and characteristics:      </p>
+      Starting a new country according to Balaji in the concepts outlined on The Network State book involves the establishment and development of what&apos;s called a Network State A network state is a highly aligned online community with a capacity for collective action that crowdfunds territory around the world and eventually gains diplomatic recognition from pre-existing states.
+      <br />
+      <br />
+       Here&apos;s a more detailed breakdown of the stages and characteristics:      </p>
 
-    <ol>
-        <li><strong>1. Startup Society:</strong> The journey begins by creating a startup society. This society can be thought of as a small scale version of the desired final state. The startup society seeks to scale into a network state that achieves diplomatic recognition from a pre-existing government, akin to how a startup company scales into a public company and achieves recognition from a pre-existing exchange like NASDAQ.</li>
-        <li><strong>2. Network Union:</strong> The startup society transitions into a network union when it becomes a digital community capable of collective action.</li>
-        <li><strong>3. Network Archipelago:</strong> The network union then transforms into a network archipelago, which manifests the collective action in the real world. The community crowdfunds physical properties around the world and connects them via the internet.</li>
-        <li><strong>4. Network State:</strong> Finally, an impressive network archipelago can achieve diplomatic recognition from an existing government, thereby becoming a true network state.</li>
+    <ol className="ml-8">
+      <li><strong>1. Startup Society:</strong> The journey begins by creating a startup society. This society can be thought of as a small scale version of the desired final state. The startup society seeks to scale into a network state that achieves diplomatic recognition from a pre-existing government, akin to how a startup company scales into a public company and achieves recognition from a pre-existing exchange like NASDAQ.</li>
+      <li><strong>2. Network Union:</strong> The startup society transitions into a network union when it becomes a digital community capable of collective action.</li>
+      <li><strong>3. Network Archipelago:</strong> The network union then transforms into a network archipelago, which manifests the collective action in the real world. The community crowdfunds physical properties around the world and connects them via the internet.</li>
+      <li><strong>4. Network State:</strong> Finally, an impressive network archipelago can achieve diplomatic recognition from an existing government, thereby becoming a true network state.</li>
     </ol>
 <br/>
       <a href="https://theincognita.com/learn/learn-how-to-establish-a-network-state" target="_blank"> Full article here.</a>
