@@ -36,7 +36,7 @@ export default function SortingSocial({ onSelectedItemsChange }) {
           'bg-green border-2 border-black' : ''} 
           rounded-md flex justify-between items-center`}
       role="menuitem"
-      aria-pressed={selectedItems.includes(itemName)}
+      button={selectedItems.includes(itemName)}
     >
       {itemName}
       {selectedItems.includes(itemName) && (

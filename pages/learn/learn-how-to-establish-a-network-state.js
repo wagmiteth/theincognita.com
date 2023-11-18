@@ -18,7 +18,7 @@ function networkstate() {
           these have the capability for collective action to build a new country
           and eventually gain diplomatic recognition. But we believe some of you
           have, these are the suggested stages for you. This article is inspired
-          by Balaji Srinivasan's book{" "}
+          by Balaji Srinivasan&apos;s book{" "}
           <a
             href="https://thenetworkstate.com"
             target="_blank"
@@ -33,7 +33,7 @@ function networkstate() {
           society. This is a community of people who share a common interest in
           building something greater. The society can be founded by anyone with
           aspirations for something new, just like founding a company or a
-          cryptocurrency. The founder's legitimacy comes from whether others opt
+          cryptocurrency. The founder&apos;s legitimacy comes from whether others opt
           to follow them.
         </p>
         <h2>Organize a Network Union</h2>
