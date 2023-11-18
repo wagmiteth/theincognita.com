@@ -14,7 +14,7 @@ class MyDocument extends Document {
         <Head>
           {/* You can include MUI's default fonts here, or any other external CSS */}
           <link
-            href="https://fonts.googleapis.com/css?family=Bebas+Neue:400|Inria+Sans:400,700"
+            href="https://fonts.googleapis.com/css?family=Bebas+Neue:400|Inria+Sans:400,700&display=optional"
             rel="stylesheet"
           />
              <link

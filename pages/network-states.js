@@ -33,11 +33,11 @@ function NetworkStates() {
       </div>
       <h2>The Network State book Balaji Srinivasan</h2>
       <p>
-      Starting a new country according to Balaji in the concepts outlined on The Network State book involves the establishment and development of what&apos;s called a "network state." A network state is a highly aligned online community with a capacity for collective action that crowdfunds territory around the world and eventually gains diplomatic recognition from pre-existing states. Here&apos;s a more detailed breakdown of the stages and characteristics:        <a href= "https://thenetworkstate.com/"target="_blank"> here.</a>
+      Starting a new country according to Balaji in the concepts outlined on The Network State book involves the establishment and development of what&apos;s called a Network State A network state is a highly aligned online community with a capacity for collective action that crowdfunds territory around the world and eventually gains diplomatic recognition from pre-existing states. Here&apos;s a more detailed breakdown of the stages and characteristics:        <a href= "https://thenetworkstate.com/"target="_blank"> here.</a>
       </p>
       <h2>How to start a new country?</h2>
       <p>
-      Starting a new country according to Balaji in the concepts outlined on The Network State book involves the establishment and development of what&apos;s called a "network state." A network state is a highly aligned online community with a capacity for collective action that crowdfunds territory around the world and eventually gains diplomatic recognition from pre-existing states. Here&apos;s a more detailed breakdown of the stages and characteristics:      </p>
+      Starting a new country according to Balaji in the concepts outlined on The Network State book involves the establishment and development of what&apos;s called a Network State A network state is a highly aligned online community with a capacity for collective action that crowdfunds territory around the world and eventually gains diplomatic recognition from pre-existing states. Here&apos;s a more detailed breakdown of the stages and characteristics:      </p>
 
     <ol>
         <li><strong>1. Startup Society:</strong> The journey begins by creating a startup society. This society can be thought of as a small scale version of the desired final state. The startup society seeks to scale into a network state that achieves diplomatic recognition from a pre-existing government, akin to how a startup company scales into a public company and achieves recognition from a pre-existing exchange like NASDAQ.</li>
