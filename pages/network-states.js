@@ -1,6 +1,7 @@
 // network-states.js
 import React, { useState } from 'react';
-import TableHomepage from "../components/TableHomepage";
+import TableHomepageDesktop from "../components/TableHomepageDesktop";
+import TableHomepageMobile from "../components/TableHomepageMobile";
 import Head from 'next/head';
 
 
@@ -26,7 +27,8 @@ function NetworkStates() {
               We are currently mapping 24 nodes. 
               <a href="https://discord.gg/EyvF2fEqWT"> Subscribe</a> for updates or apply to get listed.
         </p>
-        <TableHomepage />
+        <TableHomepageDesktop />
+        <TableHomepageMobile />
       <h2>The Network State book Balaji Srinivasan</h2>
       <p>
       Starting a new country according to Balaji in the concepts outlined on The Network State book involves the establishment and development of what&apos;s called a Network State A network state is a highly aligned online community with a capacity for collective action that crowdfunds territory around the world and eventually gains diplomatic recognition from pre-existing states. Here&apos;s a more detailed breakdown of the stages and characteristics:        <a href= "https://thenetworkstate.com/"target="_blank"> here.</a>
