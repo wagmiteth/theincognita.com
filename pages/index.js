@@ -3,7 +3,8 @@ import Head from 'next/head';
 
 import React, { useState } from "react";
 import CTAButton from "../components/CTAButton";
-import TableHomepage from "../components/TableHomepage";
+import TableHomepageDesktop from "../components/TableHomepageDesktop";
+import TableHomepageMobile from "../components/TableHomepageMobile";
 import Image from "next/image";
 import BlobShape from "../src/img/blob-shape-2.png";
 import Arrow from "../src/img/arrow-11.png";
@@ -55,7 +56,7 @@ const Home = () => {
             </div>
           </div>
           <div className="upper-right-col">
-            <div className="blobShape">
+            <div className="blobShape hidden md:block">
               <Image
                 src={BlobShape}
                 alt="Blob-shape"
@@ -81,10 +82,11 @@ const Home = () => {
           <div className="lower-middle-col"></div>
           <div className="lower-right-col">
             <NewsItemYellow />
-            <NewsItemGreen/>
+            <NewsItemGreen />
           </div>
         </div>
-        <TableHomepage />
+        <TableHomepageDesktop />
+        <TableHomepageMobile />
       </main>
       <PopupForm isOpen={isPopupOpen} onClose={handleClosePopup} />
     </div>

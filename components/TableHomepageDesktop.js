@@ -1,4 +1,4 @@
-// components/TableHomepage.js
+// components/TableHomepageDesktop.js
 import React, { useEffect, useState } from "react";
 import TableName from "./TableName";
 import TableMission from "./TableMission";
@@ -11,7 +11,7 @@ import SortingSocial from "./SortingSocial";
 import SortingToken from "./SortingToken";
 import { fetchTableNames } from "../utils/fetchAirtableData";
 
-export default function TableHomepage() {
+export default function TableHomepageDesktop() {
   const [tableData, setTableData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [filteredData, setFilteredData] = useState([]);
@@ -97,13 +97,13 @@ export default function TableHomepage() {
   }
 
   return (
-    <div className="mx-auto mt-12" style={{ maxWidth: '1100px' }}>
+<div className="hidden lg:block mx-auto mt-12 max-w-1100  ">
 
       {/* 1. Sorting row */}
       <div className="grid grid-cols-6 gap-3 p-3 bg-background" style={{ gridTemplateColumns: gridColumns }}>
 
         <span className="flex items-center">
-          <h3>Node filter</h3>
+          <h3>Desktop</h3>
         </span>
 
         <span></span>

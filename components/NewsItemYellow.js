@@ -5,7 +5,7 @@ import Timer from "../src/img/tdesign-time-5.png";
 
 const NewsItemYellow = ({ headerColor = "var(--color-yellow)" }) => {
     return (
-    <div className="container">
+    <div className="container hidden lg:block">
       <div className="header" style={{ backgroundColor: headerColor }}>
         <h3>NEWS</h3>{" "}
       </div>

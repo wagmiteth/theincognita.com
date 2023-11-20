@@ -29,7 +29,11 @@ module.exports = {
         custom: '2px 2px 0px 0px black',
         custom2: '4px 4px 0px 0px black',
         hover: '0px 0px 0px 0px black',
+      },
+      maxWidth: {
+        '1100': '1100px',
       }
+
       
     },
   },

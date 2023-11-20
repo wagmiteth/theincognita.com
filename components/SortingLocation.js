@@ -81,7 +81,7 @@ export default function SortingLocation({ locations, onSelectedItemsChange }) {
         </div>
       </button>
       {isOpen && (
-        <div className="absolute right-0 mt-2
+        <div className="absolute left-0 mt-2
          w-36 rounded-md bg-white border-2 border-black">
           <div className="py-1" role="menu"
            aria-orientation="vertical" aria-labelledby="options-menu">
