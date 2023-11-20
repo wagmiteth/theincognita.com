@@ -16,6 +16,15 @@ module.exports = {
       hoverGray: '#d3cfcf', // Note: Use quotes for custom property names with hyphens
     },
     extend: {
+      screens: {
+        'xs': '480px', // adding a new smaller screen size
+        'sm': '640px', // default Tailwind breakpoint
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
+        '3xl': '1920px', // adding a new larger screen size
+      },
       boxShadow: {
         custom: '2px 2px 0px 0px black',
         custom2: '4px 4px 0px 0px black',

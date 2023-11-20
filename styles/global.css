@@ -73,7 +73,7 @@ h2 {
   font-weight: 400;
   line-height: normal;
 }
-button h2, .container h2 {
+button h2, .table h2, .container h2 {
   margin: 0; /* Override margin for h3 inside a button */
 }
 
@@ -83,7 +83,7 @@ h3 {
   font-weight: 400;
   line-height: normal;
 }
-button h3, .container h3 {
+button h3, .table h3, .container h3 {
   margin: 0; /* Override margin for h3 inside a button */
 }
 
@@ -93,7 +93,7 @@ h4 {
   font-weight: 400;
   line-height: normal;
 }
-button h4, .container h4 {
+button h4, .table h4, .container h4 {
   margin: 0; /* Override margin for h3 inside a button */
 }
 
@@ -103,7 +103,7 @@ h5 {
   font-weight: 400;
   line-height: normal;
 }
-button h5, .container h5  {
+button h5, .table h5, .container h5  {
   margin: 0; /* Override margin for h3 inside a button */
 }
 

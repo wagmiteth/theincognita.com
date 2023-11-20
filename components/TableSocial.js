@@ -29,7 +29,7 @@ export default function TableSocial({
   discordMembers,
 }) {
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex flex-col lg:flex-row gap-2">
       {linkUrl && <SocialIcon src={LinkP} alt="Link Logo" followers={LinkFollowers} url={linkUrl} />}
       {xUrl && <SocialIcon src={XLogoP} alt="X Logo" followers={xFollowers} url={xUrl} />}
       {discordUrl && <SocialIcon src={DiscordP} alt="Discord Logo" followers={discordMembers} url={discordUrl} />}

@@ -1,6 +1,5 @@
 // components/TableHomepage.js
 import React, { useEffect, useState } from "react";
-import RenderGrid from "./RenderGrid";
 import TableName from "./TableName";
 import TableMission from "./TableMission";
 import TableLocations from "./TableLocations";
@@ -21,6 +20,9 @@ export default function TableHomepage() {
   const [selectedLocationFilters, setSelectedLocationFilters] = useState([]);
   const [uniqueLocations, setUniqueLocations] = useState([]);
 
+  const gridColumns = "minmax(180px, 1fr) minmax(150px, 1.5fr) minmax(98px, 1.5fr) repeat(2, minmax(50px, 1fr)) 56px";
+
+
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
@@ -30,9 +32,9 @@ export default function TableHomepage() {
 
       // Extract unique locations
       const locations = new Set();
-      data.forEach(item => {
+      data.forEach((item) => {
         if (Array.isArray(item.baseLocations)) {
-          item.baseLocations.forEach(location => locations.add(location));
+          item.baseLocations.forEach((location) => locations.add(location));
         }
       });
       setUniqueLocations([...locations]);
@@ -49,17 +51,13 @@ export default function TableHomepage() {
 
       if (selectedSocialFilters.length > 0) {
         filtered = filtered.filter((item) =>
-          selectedSocialFilters.some((filter) =>
-            item[filter.toLowerCase()]
-          )
+          selectedSocialFilters.some((filter) => item[filter.toLowerCase()])
         );
       }
 
       if (selectedTokenFilters.length > 0) {
         filtered = filtered.filter((item) =>
-          selectedTokenFilters.some((filter) =>
-            item[filter.toLowerCase()]
-          )
+          selectedTokenFilters.some((filter) => item[filter.toLowerCase()])
         );
       }
 
@@ -75,7 +73,12 @@ export default function TableHomepage() {
     };
 
     applyFilters();
-  }, [selectedSocialFilters, selectedTokenFilters, selectedLocationFilters, tableData]);
+  }, [
+    selectedSocialFilters,
+    selectedTokenFilters,
+    selectedLocationFilters,
+    tableData,
+  ]);
 
   const handleSocialFilterChange = (selectedItems) => {
     setSelectedSocialFilters(selectedItems);
@@ -94,13 +97,22 @@ export default function TableHomepage() {
   }
 
   return (
-    <div className="mx-auto mt-12">
-      <RenderGrid style={{ gridTemplateColumns: "190px 220px 140px auto auto 56px" }}>
+    <div className="mx-auto mt-12" style={{ maxWidth: '1100px' }}>
+
+      {/* 1. Sorting row */}
+      <div className="grid grid-cols-6 gap-3 p-3 bg-background" style={{ gridTemplateColumns: gridColumns }}>
+
         <span className="flex items-center">
           <h3>Node filter</h3>
         </span>
+
         <span></span>
-        <span><SortingLocation locations={uniqueLocations} onSelectedItemsChange={handleLocationFilterChange} /></span>
+        <span>
+          <SortingLocation
+            locations={uniqueLocations}
+            onSelectedItemsChange={handleLocationFilterChange}
+          />
+        </span>
         <span>
           <SortingSocial onSelectedItemsChange={handleSocialFilterChange} />
         </span>
@@ -108,31 +120,69 @@ export default function TableHomepage() {
           <SortingToken onSelectedItemsChange={handleTokenFilterChange} />
         </span>
         <span></span>
-      </RenderGrid>
-
-      <div className="container">
-      <RenderGrid additionalClasses="bg-white border-[2.5px]" style={{ gridTemplateColumns: "190px 220px 140px auto auto 56px" }}>
-        <span><h3>Name</h3></span>
-        <span><h3>Mission</h3></span>
-        <span><h3>Location</h3></span>
-        <span><h3>Social</h3></span>
-        <span><h3>Token</h3></span>
-        <span><h3>Apply</h3></span>
-      </RenderGrid>
       </div>
 
-      <div className="container">
-      {filteredData.map((data, index) => (
-        <RenderGrid key={index} additionalClasses="mt-4 bg-white border-[2.5px] rounded-md shadow-custom2">
-          <span><TableName name={data.name} logo={data.logoURL} linkUrl={data.url} /></span>
-          <span><TableMission mission={data.mission} /></span>
-          <span><TableLocations baseLocations={data.baseLocations} /></span>
-          <span><TableSocial linkUrl={data.url} xUrl={data.x} discordUrl={data.discord} xFollowers={data.xFollowers} discordMembers={data.discordMembers} /></span>
-          <span><TableToken openSea={data.opensea} blur={data.blur} floorPrice={data.floorPrice} /></span>
-          <span><TableCTA application={data.application} /></span>
-        </RenderGrid>
-      ))}
-            </div>
+      {/* 2. Header row */}
+      <div className="grid grid-cols-6 gap-3 p-3 mt-4 bg-white border-[2.5px]" style={{ gridTemplateColumns: gridColumns }}>
+
+          <span>
+            <h3>Name</h3>
+          </span>
+          <span>
+            <h3>Mission</h3>
+          </span>
+          <span>
+            <h3>Location</h3>
+          </span>
+          <span>
+            <h3>Social</h3>
+          </span>
+          <span>
+            <h3>Token</h3>
+          </span>
+          <span>
+            <h3>Apply</h3>
+          </span>
+        </div>
+{/* 3. Info rows */}
+        {filteredData.map((data, index) => (
+                  <div key={index} className="grid grid-cols-6 gap-3 p-3 mt-4 bg-white border-[2.5px] rounded-md shadow-custom2" style={{ gridTemplateColumns: gridColumns }}>
+
+            {" "}
+            <span>
+              <TableName
+                name={data.name}
+                logo={data.logoURL}
+                linkUrl={data.url}
+              />
+            </span>
+            <span>
+              <TableMission mission={data.mission} />
+            </span>
+            <span>
+              <TableLocations baseLocations={data.baseLocations} />
+            </span>
+            <span>
+              <TableSocial
+                linkUrl={data.url}
+                xUrl={data.x}
+                discordUrl={data.discord}
+                xFollowers={data.xFollowers}
+                discordMembers={data.discordMembers}
+              />
+            </span>
+            <span>
+              <TableToken
+                openSea={data.opensea}
+                blur={data.blur}
+                floorPrice={data.floorPrice}
+              />
+            </span>
+            <span>
+              <TableCTA application={data.application} />
+            </span>
+          </div>
+        ))}
 
       <div className="flex justify-center mt-8">
         {/* Add pagination controls here */}
