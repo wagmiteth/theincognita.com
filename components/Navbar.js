@@ -34,6 +34,7 @@ function ResponsiveAppBar() {
   };
 
   return (
+    
     <AppBar
       position="static"
       sx={{ backgroundColor: theme.palette.sand.main, boxShadow: "none" }}
@@ -55,7 +56,7 @@ function ResponsiveAppBar() {
               component="div"
               sx={{
                 mr: 2,
-                display: { xs: "none", md: "flex" },
+                display: {md: "flex" },
                 color: theme.palette.white.main,
                 textDecoration: "underline",
                 cursor: "pointer",

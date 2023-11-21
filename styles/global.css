@@ -129,6 +129,12 @@ a {
   padding-top: 56px;
 }
 
+@media (max-width: 480px) {
+  .cta-btns {
+    gap: 20px;
+  }
+}
+
 .arrow {
   padding-top: 16px;
 }
@@ -139,7 +145,6 @@ a {
 }
 .lower-left-col {
   display: flex;
-  width: 40%;
   margin-right: 20px;
 }
 

@@ -13,7 +13,7 @@ const CTAButton = ({ children, bgColor, fColor, onClick }) => {
       boxShadow: '4px 4px 0px rgba(0, 0, 0, 1)',
       transition: 'transform 0.2s ease-in-out, boxShadow 0.2s ease-in-out',
       fontFamily: 'Bebas Neue',
-      fontSize: '30px',
+      fontSize: '10px',
       fontStyle: 'normal',
       fontWeight: '400',
       lineHeight: 'normal'

@@ -79,7 +79,7 @@ const Home = () => {
               <a href="https://discord.gg/EyvF2fEqWT"> Subscribe</a> for updates or apply to get listed.
             </p>
           </div>
-          <div className="lower-middle-col"></div>
+          <div className="lower-middle-col hidden sm:block"></div>
           <div className="lower-right-col">
             <NewsItemYellow />
             <NewsItemGreen />
