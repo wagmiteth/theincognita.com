@@ -38,10 +38,8 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: '"Inria Sans", "Bebas Neue", "sans-serif"', // Default font family
     h1: {
       fontFamily: '"Bebas Neue", sans-serif',
-      fontSize: "48px",
       fontWeight: 400,
       letterSpacing: "-0.86px",
       lineHeight: "normal",

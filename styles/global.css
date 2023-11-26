@@ -17,11 +17,11 @@
 
 html,
 body, #__next  {
+  font-family: 'Inria Sans', sans-serif;
   background-color: var(--color-background);
   min-height: 100vh;
   padding: 0;
   margin: 0;
-  font-family: "Inria Sans", sans-serif;
 }
 .wrapper {
   max-width: 1100px;
@@ -38,20 +38,12 @@ body, #__next  {
 
 p,
 span {
-  font-family: "Inria Sans", sans-serif;
+  font-family: 'Inria Sans', sans-serif;
   color: var(--color-black);
   font-size: 18px;
   font-weight: 400;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  font-family: "Bebas Neue", sans-serif;
-  color: var(--color-black);
-  margin: 0px;
-}
 
 h5,
 h6 {
@@ -61,6 +53,8 @@ h6 {
 }
 
 h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  color: var(--color-black);
   font-size: 86px;
   font-weight: 400;
   letter-spacing: -0.86px;
@@ -68,6 +62,8 @@ h1 {
 }
 
 h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  color: var(--color-black);
   font-size: 30px;
   margin: 12px 0;
   font-weight: 400;
@@ -78,6 +74,8 @@ button h2, .table h2, .container h2 {
 }
 
 h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  color: var(--color-black);
   font-size: 26px;
   margin: 14px 0;
   font-weight: 400;
@@ -88,6 +86,8 @@ button h3, .table h3, .container h3 {
 }
 
 h4 {
+  font-family: 'Inria Sans', sans-serif;
+  color: var(--color-black);
   font-size: 24px;
   margin: 12px 0;
   font-weight: 400;

@@ -7,6 +7,7 @@ import theme from "../styles/theme"; // adjust path accordingly if your theme is
 import "../styles/global.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer"; // Adjust the path to match the location of your Navbar component.
+import '../fonts/inria-sans.css'
 
 function MyApp(props) {
   const { Component, pageProps } = props;
@@ -20,7 +21,7 @@ function MyApp(props) {
   }, []);
 
   return (
-    <ThemeProvider theme={theme}>
+          <ThemeProvider theme={theme}>
       <div className="wrapper">
         <Navbar />
         <main className="content">

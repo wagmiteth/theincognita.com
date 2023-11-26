@@ -13,7 +13,6 @@ import { fetchTableNames } from "../utils/fetchAirtableData";
 
 export default function TableHomepageMobile() {
   const [tableData, setTableData] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
   const [filteredData, setFilteredData] = useState([]);
   const [selectedSocialFilters, setSelectedSocialFilters] = useState([]);
   const [selectedTokenFilters, setSelectedTokenFilters] = useState([]);
@@ -25,7 +24,6 @@ export default function TableHomepageMobile() {
 
   useEffect(() => {
     const fetchData = async () => {
-      setIsLoading(true);
       const data = await fetchTableNames();
       setTableData(data);
       setFilteredData(data);
@@ -39,7 +37,6 @@ export default function TableHomepageMobile() {
       });
       setUniqueLocations([...locations]);
 
-      setIsLoading(false);
     };
 
     fetchData();
@@ -92,9 +89,7 @@ export default function TableHomepageMobile() {
     setSelectedLocationFilters(selectedItems);
   };
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
+
 
   return (
     <div className="lg:hidden mx-auto mt-12" style={{ maxWidth: '1100px' }}>
