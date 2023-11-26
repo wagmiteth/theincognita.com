@@ -93,6 +93,7 @@ function ResponsiveAppBar() {
               onClose={handleCloseNavMenu}
               sx={{
                 display: { xs: "block", md: "none" },
+                width: '100%', // Full width for better mobile usabili
               }}
             >
               {pages.map((page) => (
@@ -101,7 +102,11 @@ function ResponsiveAppBar() {
                   href={`/${page.url.toLowerCase()}`}
                   passHref
                 >
-                  <Button variant="h3" onClick={handleCloseNavMenu}>
+                    <Button
+                    variant="h3"
+                    onClick={handleCloseNavMenu}
+                    sx={{ display: "block" }} // Ensure each button is full width
+                  >
                     {page.name}
                   </Button>
                 </Link>
