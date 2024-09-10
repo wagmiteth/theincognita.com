@@ -20,13 +20,13 @@ const NewsItemGreen = ({ headerColor = "var(--color-green)" }) => {
           <h5>Now</h5>
         </div>
         <div className="title">
-          <h3>The Anthology of Balaji</h3>
+          <h3>Network State Conference</h3>
         </div>
         <div className="description">
           <span>
-          New book by Eric Jorgenson. Balajis view on Technology, Truth, and Building the Future. 
+          Network State Conference in Singapore on Sep 22. Speakers: Balaji, Naval, Vitalik, Bryan Johnson.
           </span>
-          <div><a href="https://balajianthology.com/"target="_blank" rel="noopener noreferrer"> Read more</a></div>
+          <div><a href="https://ns.com/conference"target="_blank" rel="noopener noreferrer"> Read more</a></div>
         </div>
       </div>
 

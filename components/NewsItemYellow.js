@@ -20,15 +20,13 @@ const NewsItemYellow = ({ headerColor = "var(--color-yellow)" }) => {
           <h5>Now</h5>
         </div>
         <div className="title">
-          <h3>CONFERENCE Servey</h3>
+          <h3>Network School</h3>
         </div>
         <div className="description">
           <span>
-          Share your thoughts,info and ENS address 
-          for job opportunities, NFT airdrops, and 
-          tailored community events.
+          Join Balaji's 90-day Network School near Singapore. Starts Sep 23. Limited spots, housing from $1000/month.
           </span>
-          <div><a href="https://thenetworkstate.com/poll" target="_blank" rel="noopener noreferrer"> Read more</a></div>
+          <div><a href="https://ns.com/school" target="_blank" rel="noopener noreferrer"> Read more</a></div>
         </div>
       </div>
 
