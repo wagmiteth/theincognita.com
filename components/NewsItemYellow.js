@@ -17,7 +17,7 @@ const NewsItemYellow = ({ headerColor = "var(--color-yellow)" }) => {
             width={23} // Provide width and height
             height={21}
           />
-          <h5>Now</h5>
+          <h5>23 Sep 2024</h5>
         </div>
         <div className="title">
           <h3>Network School</h3>
