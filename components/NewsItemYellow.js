@@ -23,8 +23,8 @@ const NewsItemYellow = ({ headerColor = "var(--color-yellow)" }) => {
           <h3>Network School</h3>
         </div>
         <div className="description">
-          <span>
-          Join Balaji's 90-day Network School near Singapore. Starts Sep 23. Limited spots, housing from $1000/month.
+        <span>
+          Join Balaji&apos;s 90-day Network School near Singapore. Starts Sep 23. Limited spots, housing from $1000/month.
           </span>
           <div><a href="https://ns.com/school" target="_blank" rel="noopener noreferrer"> Read more</a></div>
         </div>
