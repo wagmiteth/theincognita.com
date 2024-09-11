@@ -8,7 +8,7 @@ const Footer = () => {
         <p>theincognita.com</p>
         <br />
         <p>Made with ❤️ by the Incognita community</p>
-        <p>Help us at <a href="https://github.com/wagmiteth/theIncognita.github.io "target="_blank" rel="noopener noreferrer">Github</a> </p>
+        <p>Help us at <a href="https://github.com/wagmiteth/theincognita.com"target="_blank" rel="noopener noreferrer">Github</a> </p>
         </div>
       </footer>
     );
