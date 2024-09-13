@@ -18,7 +18,13 @@ const pages = [
   { name: "Roadmap", url: "Roadmap" },
   { name: "DAO", url: "DAO" },
   { name: "Token", url: "Token" },
-  { name: "Learn", url: "Learn" },
+  { 
+    name: "Learn", 
+    url: "Learn",
+    subItems: [
+      { name: "How to establish a Network State?", url: "learn/learn-how-to-establish-a-network-state" }
+    ]
+  },
   { name: "Contact", url: "Contact" },
 ];
 function ResponsiveAppBar() {
@@ -97,19 +103,47 @@ function ResponsiveAppBar() {
               }}
             >
               {pages.map((page) => (
-                <Link
-                  key={page.url}
-                  href={`/${page.url.toLowerCase()}`}
-                  passHref
-                >
-                    <Button
-                    variant="h3"
-                    onClick={handleCloseNavMenu}
-                    sx={{ display: "block" }} // Ensure each button is full width
-                  >
-                    {page.name}
-                  </Button>
-                </Link>
+                <React.Fragment key={page.url}>
+                  {page.subItems ? (
+                    <>
+                      <MenuItem onClick={handleCloseNavMenu}>
+                        <Typography variant="h3">{page.name}</Typography>
+                      </MenuItem>
+                      {page.subItems.map((subItem) => (
+                        <Link
+                          key={subItem.url}
+                          href={`/${subItem.url.toLowerCase()}`}
+                          passHref
+                        >
+                          <MenuItem 
+                            onClick={handleCloseNavMenu} 
+                            sx={{ 
+                              pl: 4,
+                              '& .MuiTypography-root': {
+                                color: 'black',
+                                fontSize: '0.9em',
+                              }
+                            }}
+                          >
+                            <Typography variant="h4">
+                              {subItem.name}
+                            </Typography>
+                          </MenuItem>
+                        </Link>
+                      ))}
+                    </>
+                  ) : (
+                    <Link
+                      key={page.url}
+                      href={`/${page.url.toLowerCase()}`}
+                      passHref
+                    >
+                      <MenuItem onClick={handleCloseNavMenu}>
+                        <Typography variant="h3">{page.name}</Typography>
+                      </MenuItem>
+                    </Link>
+                  )}
+                </React.Fragment>
               ))}
             </Menu>
           </Box>
@@ -118,17 +152,73 @@ function ResponsiveAppBar() {
             sx={{
               display: { xs: "none", md: "flex" },
               ml: "auto",
+              flexWrap: "wrap",
+              justifyContent: "flex-end",
             }}
           >
             {pages.map((page) => (
-              <Link key={page.url} href={`/${page.url.toLowerCase()}`} passHref>
-                <Button
-                  onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "white", display: "block" }}
-                >
-                  <Typography variant="h3">{page.name}</Typography>
-                </Button>
-              </Link>
+              <React.Fragment key={page.url}>
+                {page.subItems ? (
+                  <div className="relative group">
+                    <Button
+                      onClick={handleCloseNavMenu}
+                      sx={{ 
+                        my: 2, 
+                        color: "white", 
+                        display: "block",
+                        px: { md: 1, lg: 2 }, // Adjust padding based on screen size
+                      }}
+                    >
+                      <Typography variant="h3" sx={{ fontSize: { md: '1.2rem', lg: '1.5rem' } }}>
+                        {page.name}
+                      </Typography>
+                    </Button>
+                    <div className="absolute right-0 mt-2 w-48 md:w-56 opacity-0 transform scale-95 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:scale-100">
+                      <div className="py-1 bg-white border-2 border-black rounded-md shadow-lg">
+                        {page.subItems.map((subItem) => (
+                          <Link key={subItem.url} href={`/${subItem.url.toLowerCase()}`} passHref>
+                            <Button
+                              onClick={handleCloseNavMenu}
+                              sx={{
+                                my: 1,
+                                color: "black !important", // Force black color
+                                display: "block",
+                                width: "100%",
+                                justifyContent: "flex-start",
+                                textAlign: "left",
+                                lineHeight: 1.2,
+                                fontSize: "0.7rem",
+                                padding: "6px 12px",
+                                '&:hover': {
+                                  backgroundColor: 'rgba(0, 0, 0, 0.04)', // Light grey on hover
+                                },
+                              }}
+                            >
+                              {subItem.name}
+                            </Button>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <Link key={page.url} href={`/${page.url.toLowerCase()}`} passHref>
+                    <Button
+                      onClick={handleCloseNavMenu}
+                      sx={{ 
+                        my: 2, 
+                        color: "white", 
+                        display: "block",
+                        px: { md: 1, lg: 2 }, // Adjust padding based on screen size
+                      }}
+                    >
+                      <Typography variant="h3" sx={{ fontSize: { md: '1.2rem', lg: '1.5rem' } }}>
+                        {page.name}
+                      </Typography>
+                    </Button>
+                  </Link>
+                )}
+              </React.Fragment>
             ))}
           </Box>
         </Toolbar>
