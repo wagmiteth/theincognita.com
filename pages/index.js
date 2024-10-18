@@ -5,7 +5,6 @@ import React, { useState } from "react";
 import CTAButton from "../components/CTAButton";
 import TableHomepageDesktop from "../components/TableHomepageDesktop";
 import TableHomepageMobile from "../components/TableHomepageMobile";
-import Image from "next/image";
 import BlobShape from "../src/img/blob-shape-2.png";
 import Arrow from "../src/img/arrow-11.png";
 import NewsItemYellow from "../components/NewsItemYellow";
@@ -47,22 +46,12 @@ const Home = () => {
               </a>
             </div>
             <div className="arrow">
-              <Image
-                src={Arrow}
-                alt="Hand drawn arrow"
-                width={100} // Provide width and height
-                height={100}
-              />
+              <img src={Arrow.src} alt="Hand drawn arrow" width={100} height={100} />
             </div>
           </div>
           <div className="upper-right-col">
             <div className="blobShape hidden md:block">
-              <Image
-                src={BlobShape}
-                alt="Blob-shape"
-                width={234} // Provide width and height
-                height={257}
-              />
+              <img src={BlobShape.src} alt="Blob-shape" width={234} height={257} />
             </div>
           </div>
         </div>
