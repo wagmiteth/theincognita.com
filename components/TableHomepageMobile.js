@@ -4,7 +4,7 @@ import TableNameMobile from "./TableNameMobile";
 import TableMissionMobile from "./TableMissionMobile";
 import TableLocationsMobile from "./TableLocationsMobile";
 import TableSocialMobile from "./TableSocialMobile";
-import TableTokenMobile from "./TableTokenMobile";
+import TableFollowers from "./TableFollowers";
 import TableCTA from "./TableCTA";
 import SortingLocation from "./SortingLocation";
 import SortingSocial from "./SortingSocial";
@@ -18,6 +18,7 @@ export default function TableHomepageMobile() {
   const [selectedTokenFilters, setSelectedTokenFilters] = useState([]);
   const [selectedLocationFilters, setSelectedLocationFilters] = useState([]);
   const [uniqueLocations, setUniqueLocations] = useState([]);
+  const [sortDirection, setSortDirection] = useState('desc');
 
   const gridColumns = "auto auto";
 
@@ -89,7 +90,17 @@ export default function TableHomepageMobile() {
     setSelectedLocationFilters(selectedItems);
   };
 
-
+  const handleFollowerSort = () => {
+    const sortedData = [...filteredData].sort((a, b) => {
+      if (sortDirection === 'desc') {
+        return b.totalFollowers - a.totalFollowers;
+      } else {
+        return a.totalFollowers - b.totalFollowers;
+      }
+    });
+    setFilteredData(sortedData);
+    setSortDirection(sortDirection === 'desc' ? 'asc' : 'desc');
+  };
 
   return (
     <div className="lg:hidden mx-auto mt-12" style={{ maxWidth: '1100px' }}>
@@ -105,8 +116,17 @@ export default function TableHomepageMobile() {
         <span>
           <SortingSocial onSelectedItemsChange={handleSocialFilterChange} />
         </span>
-        <span >
-          <SortingToken onSelectedItemsChange={handleTokenFilterChange} />
+        <span>
+          <button
+            onClick={handleFollowerSort}
+            className="bg-white shadow-custom2 p-2 flex items-center justify-between
+              rounded-lg tracking-wider border-[2.5px] border-black 
+              transition-all duration-200 hover:translate-x-0.5 
+              hover:translate-y-0.5 hover:shadow-hover"
+          >
+            <span>Followers</span>
+            <span className="pl-2">{sortDirection === 'desc' ? '↓' : '↑'}</span>
+          </button>
         </span>
       </div>
 
@@ -136,13 +156,6 @@ export default function TableHomepageMobile() {
                   discordUrl={data.discord}
                   xFollowers={data.xFollowers}
                   discordMembers={data.discordMembers}
-                />
-              </span>
-              <span className="w-full sm:w-auto">
-                <TableTokenMobile
-                  openSea={data.opensea}
-                  blur={data.blur}
-                  floorPrice={data.floorPrice}
                 />
               </span>
             </div>

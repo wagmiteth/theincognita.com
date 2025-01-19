@@ -17,16 +17,16 @@ const NewsItemGreen = ({ headerColor = "var(--color-green)" }) => {
             width={23} // Provide width and height
             height={21}
           />
-          <h5>22 Sep 2024</h5>
+          <h5>21 Jan 2025</h5>
         </div>
         <div className="title">
-          <h3>Network State Conference</h3>
+          <h3>Network State Writing Cohort</h3>
         </div>
         <div className="description">
           <span>
-          Network State Conference in Singapore on Sep 22. Speakers: Balaji, Naval, Vitalik, Bryan Johnson.
+          Are you passionate about exploring and writing on network state-related topics?  Join ​Network State Writers Cohort!
           </span>
-          <div><a href="https://ns.com/conference"target="_blank" rel="noopener noreferrer"> Read more</a></div>
+          <div><a href="https://lu.ma/ltp7r3iu"target="_blank" rel="noopener noreferrer"> Read more</a></div>
         </div>
       </div>
 

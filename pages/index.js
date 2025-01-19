@@ -27,13 +27,13 @@ const Home = () => {
   return (
     <div>
       <Head>
-        <title>The Incognita | - Open source dasboard for Network States</title>
+        <title>The Incognita | - Open source dashboard for Network States</title>
       </Head>
       <main>
         <div className="upper-col">
           <div className="upper-left-col">
             <h1 class="text-4xl md:text-6xl lg:text-8xl">
-              OPEN SOURCE DASBOARD FOR ASPIRING NETWORK STATES
+              OPEN SOURCE DASHBOARD FOR ASPIRING NETWORK STATES
             </h1>
             <div className="cta-btns">
             <CTAButton onClick={handleOpenPopup}>

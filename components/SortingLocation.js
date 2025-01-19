@@ -30,8 +30,11 @@ export default function SortingLocation({ locations, onSelectedItemsChange }) {
       onClick={() => toggleItem(itemName)}
       className={`block px-4 py-2 mx-2 my-2 text-sm
        text-black hover:bg-yellow
-        ${selectedItems.includes(itemName) ? 
-          'bg-yellow border-2 border-black' : ''} 
+        ${
+          selectedItems.includes(itemName)
+            ? "bg-yellow border-2 border-black"
+            : ""
+        } 
           rounded-md flex justify-between items-center`}
       role="menuitem"
       button={selectedItems.includes(itemName)}
@@ -45,8 +48,7 @@ export default function SortingLocation({ locations, onSelectedItemsChange }) {
 
   useEffect(() => {
     const clickListener = (event) => {
-      if (dropdownRef.current && 
-        !dropdownRef.current.contains(event.target)) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setIsOpen(false);
       }
     };
@@ -76,17 +78,28 @@ export default function SortingLocation({ locations, onSelectedItemsChange }) {
       >
         Location
         <div className="pl-2">
-          <Image src={isOpen ? vector1 : vector2}
-           alt="Toggle dropdown" width={16} height={16} />
+          <Image
+            src={isOpen ? vector1 : vector2}
+            alt="Toggle dropdown"
+            width={16}
+            height={16}
+          />
         </div>
       </button>
       {isOpen && (
-        <div className="absolute left-0 mt-2
-         w-36 rounded-md bg-white border-2 border-black">
-          <div className="py-1" role="menu"
-           aria-orientation="vertical" aria-labelledby="options-menu">
+        <div
+          className="absolute left-0 mt-2
+         w-36 rounded-md bg-white border-2 border-black"
+        >
+          <div
+            className="py-1"
+            role="menu"
+            aria-orientation="vertical"
+            aria-labelledby="options-menu"
+          >
             <div onClick={(event) => event.stopPropagation()}>
-              {locations && locations.map((location, index) => renderItem(location))}
+              {locations &&
+                locations.map((location, index) => renderItem(location))}
             </div>
           </div>
         </div>

@@ -17,16 +17,16 @@ const NewsItemYellow = ({ headerColor = "var(--color-yellow)" }) => {
             width={23} // Provide width and height
             height={21}
           />
-          <h5>23 Sep 2024</h5>
+          <h5>14 Jan 2025</h5>
         </div>
         <div className="title">
-          <h3>Network School</h3>
+          <h3>Launch of Agent</h3>
         </div>
         <div className="description">
         <span>
-          Join Balaji&apos;s 90-day Network School near Singapore. Starts Sep 23. Limited spots, housing from $1000/month.
+        The Incognita community is planning for launch of an agent and token 2025. Join Discord for more info!
           </span>
-          <div><a href="https://ns.com/school" target="_blank" rel="noopener noreferrer"> Read more</a></div>
+          <div><a href="https://discord.gg/EyvF2fEqWT" target="_blank" rel="noopener noreferrer"> Read more</a></div>
         </div>
       </div>
 
