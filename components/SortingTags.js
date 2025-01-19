@@ -6,7 +6,7 @@ import vector2 from "../src/img/vector-2.png";
 import cross from "../src/img/cross.png";
 
 // Add a new prop `onSelectedItemsChange`
-export default function SortingTags({ tags, onSelectedItemsChange }) {
+export default function SortingTags({ tags = [], onSelectedItemsChange }) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
   const [selectedItems, setSelectedItems] = useState([]);
@@ -27,28 +27,7 @@ export default function SortingTags({ tags, onSelectedItemsChange }) {
     });
   };
 
-  const renderItem = (itemName) => (
-    <button
-      onClick={() => toggleItem(itemName)}
-      className={`block px-4 py-2 mx-2 my-2 text-sm
-       text-black hover:bg-purple
-        ${
-          selectedItems.includes(itemName)
-            ? "bg-purple border-2 border-black"
-            : ""
-        } 
-          rounded-md flex justify-between items-center`}
-      role="menuitem"
-      button={selectedItems.includes(itemName)}
-    >
-      {itemName}
-      {selectedItems.includes(itemName) && (
-        <Image src={cross} alt="Remove filter" width={16} height={16} />
-      )}
-    </button>
-  );
-
-  // Detect clicks outside of the dropdown to close it
+  // Close dropdown when clicking outside
   useEffect(() => {
     const clickListener = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -65,8 +44,29 @@ export default function SortingTags({ tags, onSelectedItemsChange }) {
     };
   }, [isOpen]);
 
+  const renderItem = (itemName) => (
+    <button
+      key={itemName}
+      onClick={() => toggleItem(itemName)}
+      className={`block px-4 py-2 mx-2 my-2 text-sm
+       text-black hover:bg-teal
+        ${
+          selectedItems.includes(itemName)
+            ? "bg-teal border-2 border-black"
+            : ""
+        } 
+        rounded-md flex justify-between items-center`}
+      role="menuitem"
+    >
+      {itemName}
+      {selectedItems.includes(itemName) && (
+        <Image src={cross} alt="Remove filter" width={16} height={16} />
+      )}
+    </button>
+  );
+
   return (
-    <div className="relative inline-block text-left z-50" ref={dropdownRef}>
+    <div className="relative inline-block text-left z-10" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="bg-white shadow-custom2 p-2
@@ -101,7 +101,7 @@ export default function SortingTags({ tags, onSelectedItemsChange }) {
             aria-labelledby="options-menu"
           >
             <div onClick={(event) => event.stopPropagation()}>
-              {tags && tags.map((tag, index) => renderItem(tag))}
+              {tags && tags.map((tag) => renderItem(tag))}
             </div>
           </div>
         </div>
