@@ -11,7 +11,7 @@ export default function TableTags({ baseTags }) {  // Changed from basetags to b
 
   return (
     <div className="flex flex-wrap items-center min-h-[72px]">
-      <div className="flex flex-wrap gap-1">{tagsContent}</div>
+      <div className="flex flex-wrap gap-1 ">{tagsContent}</div>
     </div>
   );
 }

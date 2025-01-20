@@ -49,10 +49,10 @@ export default function SortingTags({ tags = [], onSelectedItemsChange }) {
       key={itemName}
       onClick={() => toggleItem(itemName)}
       className={`block px-4 py-2 mx-2 my-2 text-sm
-       text-black hover:bg-teal
+       text-black hover:bg-purple
         ${
           selectedItems.includes(itemName)
-            ? "bg-teal border-2 border-black"
+            ? "bg-purple border-2 border-black"
             : ""
         } 
         rounded-md flex justify-between items-center`}
