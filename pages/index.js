@@ -1,5 +1,5 @@
 // index.js
-import Head from 'next/head';
+import Head from "next/head";
 
 import React, { useState } from "react";
 import CTAButton from "../components/CTAButton";
@@ -27,7 +27,9 @@ const Home = () => {
   return (
     <div>
       <Head>
-        <title>The Incognita | - Open source dashboard for Network States</title>
+        <title>
+          The Incognita | - Open source dashboard for Network States
+        </title>
       </Head>
       <main>
         <div className="upper-col">
@@ -36,36 +38,50 @@ const Home = () => {
               OPEN SOURCE DASHBOARD FOR ASPIRING NETWORK STATES
             </h1>
             <div className="cta-btns">
-            <CTAButton onClick={handleOpenPopup}>
-          <h2 className="text-white">Get listed</h2>
-        </CTAButton>
-              <a href="https://discord.gg/EyvF2fEqWT" target="_blank" rel="noopener noreferrer">
+              <CTAButton onClick={handleOpenPopup}>
+                <h2 className="text-white">Get listed</h2>
+              </CTAButton>
+              <a
+                href="https://discord.gg/EyvF2fEqWT"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <CTAButton bgColor="var(--color-white)">
                   <h2>Join Discord</h2>
                 </CTAButton>
               </a>
             </div>
             <div className="arrow">
-              <img src={Arrow.src} alt="Hand drawn arrow" width={100} height={100} />
+              <img
+                src={Arrow.src}
+                alt="Hand drawn arrow"
+                width={100}
+                height={100}
+              />
             </div>
           </div>
           <div className="upper-right-col">
             <div className="blobShape hidden md:block">
-              <img src={BlobShape.src} alt="Blob-shape" width={234} height={257} />
+              <img
+                src={BlobShape.src}
+                alt="Blob-shape"
+                width={234}
+                height={257}
+              />
             </div>
           </div>
         </div>
         <div className="lower-col">
           <div className="lower-left-col flex items-center justify-center">
             <p>
-              The Incognita DAO are building a open 
-              source database for web3 communities. 
-               Search and find your future Network
-              state or join the DAO to help us scale the concept.
+              The Incognita DAO are building a open source database for web3
+              communities. Search and find your future Network state or join the
+              DAO to help us scale the concept.
               <br />
               <br />
-              We are currently mapping 24 nodes. 
-              <a href="https://discord.gg/EyvF2fEqWT"> Subscribe</a> for updates or apply to get listed.
+              We are currently mapping 97 nodes.
+              <a href="https://x.com/incognitaeth"> Subscribe</a> for updates
+              or <a href="https://discord.gg/EyvF2fEqWT"> apply </a>  to get listed.
             </p>
           </div>
           <div className="lower-middle-col hidden sm:block"></div>
