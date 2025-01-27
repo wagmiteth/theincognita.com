@@ -9,14 +9,12 @@ export default function TableLocations({ baseLocations }) {
       <Locations key={index} locationName={location.trim()} />
     ))
   ) : (
-    <div>No locations available</div>  // Or any other fallback content
+    <div>No locations available</div> // Or any other fallback content
   );
 
   return (
     <div className="flex flex-wrap items-center min-h-[72px]">
-      <div className="flex flex-wrap gap-1">
-        {locationsContent}
-      </div>
+      <div className="flex flex-wrap gap-1 items-start">{locationsContent}</div>
     </div>
   );
 }

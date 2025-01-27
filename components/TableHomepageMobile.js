@@ -28,23 +28,33 @@ export default function TableHomepageMobile() {
       setTableData(data);
       setFilteredData(data);
 
-      // Extract unique locations
+      // Extract unique locations and sort alphabetically (case-insensitive)
       const locations = new Set();
       data.forEach((item) => {
         if (Array.isArray(item.baseLocations)) {
-          item.baseLocations.forEach((location) => locations.add(location));
+          item.baseLocations.forEach((location) =>
+            locations.add(location.trim())
+          );
         }
       });
-      setUniqueLocations([...locations]);
+      setUniqueLocations(
+        [...locations].sort((a, b) =>
+          a.localeCompare(b, undefined, { sensitivity: "base" })
+        )
+      );
 
-      // Extract unique tags
+      // Extract unique tags and sort alphabetically (case-insensitive)
       const tags = new Set();
       data.forEach((item) => {
         if (Array.isArray(item.tags)) {
           item.tags.forEach((tag) => tags.add(tag.trim()));
         }
       });
-      setUniqueTags([...tags]);
+      setUniqueTags(
+        [...tags].sort((a, b) =>
+          a.localeCompare(b, undefined, { sensitivity: "base" })
+        )
+      );
     };
 
     fetchData();

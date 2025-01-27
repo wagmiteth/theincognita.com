@@ -13,7 +13,7 @@ export default function TableLocationsMobile({ baseLocations }) {
 
   return (
     <div className="flex flex-wrap items-center py-1"> 
-      <div className="flex flex-wrap gap-1">
+      <div className="flex flex-wrap gap-1 items-start">
         {locationsContent}
       </div>
     </div>
