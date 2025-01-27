@@ -1,5 +1,5 @@
 // components/TableHomepageMobile.js
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import TableNameMobile from "./TableNameMobile";
 import TableMissionMobile from "./TableMissionMobile";
 import TableLocationsMobile from "./TableLocationsMobile";
@@ -21,6 +21,9 @@ export default function TableHomepageMobile() {
   const [uniqueTags, setUniqueTags] = useState([]);
 
   const gridColumns = "auto auto";
+  const locationRef = useRef();
+  const socialRef = useRef();
+  const tagsRef = useRef();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -109,24 +112,56 @@ export default function TableHomepageMobile() {
     setSelectedTagFilters(selectedItems);
   };
 
+  const resetAllFilters = () => {
+    setSelectedSocialFilters([]);
+    setSelectedTagFilters([]);
+    setSelectedLocationFilters([]);
+
+    locationRef.current?.resetItems();
+    socialRef.current?.resetItems();
+    tagsRef.current?.resetItems();
+  };
+
   return (
     <div className="lg:hidden mx-auto mt-12" style={{ maxWidth: "1100px" }}>
-      {/* 1. Sorting row */}
-      <div className="flex justify-between bg-background">
+      <div className="flex justify-between bg-background items-center">
         <span>
           <SortingLocation
+            ref={locationRef}
             locations={uniqueLocations}
             onSelectedItemsChange={handleLocationFilterChange}
           />
         </span>
         <span>
-          <SortingSocial onSelectedItemsChange={handleSocialFilterChange} />
+          <SortingSocial
+            ref={socialRef}
+            onSelectedItemsChange={handleSocialFilterChange}
+          />
         </span>
         <span>
           <SortingTags
+            ref={tagsRef}
             tags={uniqueTags}
             onSelectedItemsChange={handleTagFilterChange}
           />
+        </span>
+        <span className="flex justify-end">
+          {(selectedLocationFilters.length > 0 ||
+            selectedSocialFilters.length > 0 ||
+            selectedTagFilters.length > 0) && (
+            <button
+              onClick={resetAllFilters}
+              className="bg-white shadow-custom2 p-2
+               rounded-lg tracking-wider border-[2.5px]
+               border-black transition-all duration-200
+               hover:translate-x-0.5 hover:translate-y-0.5
+               hover:shadow-hover hover:bg-red-100
+               flex items-center justify-center h-fit"
+              aria-label="Reset all filters"
+            >
+              <span className="font-medium">Reset</span>
+            </button>
+          )}
         </span>
       </div>
 

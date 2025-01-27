@@ -1,15 +1,33 @@
 // SortingTags.js
-import React, { useState, useEffect, useRef } from "react";
+import React, {
+  useState,
+  useEffect,
+  useRef,
+  forwardRef,
+  useImperativeHandle,
+} from "react";
 import Image from "next/image";
 import vector1 from "../src/img/vector-1.png";
 import vector2 from "../src/img/vector-2.png";
 import cross from "../src/img/cross.png";
 
-// Add a new prop `onSelectedItemsChange`
-export default function SortingTags({ tags = [], onSelectedItemsChange }) {
+const SortingTags = forwardRef(({ tags = [], onSelectedItemsChange }, ref) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
   const [selectedItems, setSelectedItems] = useState([]);
+
+  useImperativeHandle(ref, () => ({
+    resetItems: () => {
+      setSelectedItems([]);
+    },
+  }));
+
+  const resetFilters = () => {
+    setSelectedItems([]);
+    if (onSelectedItemsChange) {
+      onSelectedItemsChange([]);
+    }
+  };
 
   // Toggle the selection of items and invoke the callback
   const toggleItem = (item) => {
@@ -117,4 +135,6 @@ export default function SortingTags({ tags = [], onSelectedItemsChange }) {
       )}
     </div>
   );
-}
+});
+
+export default SortingTags;

@@ -1,5 +1,5 @@
 // components/TableHomepageDesktop.js
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import TableName from "./TableName";
 import TableMission from "./TableMission";
 import TableLocations from "./TableLocations";
@@ -25,6 +25,10 @@ export default function TableHomepageDesktop() {
 
   const gridColumns =
     "minmax(180px, 1fr) minmax(150px, 2fr) minmax(120px, 1fr) repeat(2, minmax(50px, 1fr)) 56px";
+
+  const locationRef = useRef(null);
+  const socialRef = useRef(null);
+  const tagsRef = useRef(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -136,38 +140,70 @@ export default function TableHomepageDesktop() {
     setSortDirection(sortDirection === "desc" ? "asc" : "desc");
   };
 
+  const resetAllFilters = () => {
+    // Reset parent state
+    setSelectedSocialFilters([]);
+    setSelectedTagsFilters([]);
+    setSelectedLocationFilters([]);
+
+    // Reset refs for child components
+    locationRef.current?.resetItems();
+    socialRef.current?.resetItems();
+    tagsRef.current?.resetItems();
+  };
+
   if (isLoading) {
     return <div>Loading...</div>;
   }
 
   return (
-    <div className="hidden lg:block mx-auto mt-12 max-w-1100  ">
-      {/* 1. Sorting row */}
+    <div className="hidden lg:block mx-auto mt-12 max-w-1100">
       <div
-        className="grid grid-cols-6 gap-3 p-3 bg-background"
+        className="grid grid-cols-6 gap-3 p-3 bg-background items-center"
         style={{ gridTemplateColumns: gridColumns }}
       >
         <span className="flex items-center">
           <h3></h3>
         </span>
-
         <span></span>
         <span>
           <SortingLocation
+            ref={locationRef}
             locations={uniqueLocations}
             onSelectedItemsChange={handleLocationFilterChange}
           />
         </span>
         <span>
-          <SortingSocial onSelectedItemsChange={handleSocialFilterChange} />
+          <SortingSocial
+            ref={socialRef}
+            onSelectedItemsChange={handleSocialFilterChange}
+          />
         </span>
         <span>
           <SortingTags
+            ref={tagsRef}
             tags={uniqueTags}
             onSelectedItemsChange={handleTagsFilterChange}
           />
         </span>
-        <span></span>
+        <span className="flex justify-end">
+          {(selectedLocationFilters.length > 0 ||
+            selectedSocialFilters.length > 0 ||
+            selectedTagsFilters.length > 0) && (
+            <button
+              onClick={resetAllFilters}
+              className="bg-white shadow-custom2 p-2
+               rounded-lg tracking-wider border-[2.5px]
+               border-black transition-all duration-200
+               hover:translate-x-0.5 hover:translate-y-0.5
+               hover:shadow-hover hover:bg-red-100
+               flex items-center justify-center"
+              aria-label="Reset all filters"
+            >
+              <span className="font-medium">Reset</span>
+            </button>
+          )}
+        </span>
       </div>
 
       {/* 2. Header row */}

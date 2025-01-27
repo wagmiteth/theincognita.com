@@ -1,24 +1,33 @@
 // SortingSocial.js
-import React, { useState, useEffect, useRef } from "react";
+import React, {
+  useState,
+  useEffect,
+  useRef,
+  forwardRef,
+  useImperativeHandle,
+} from "react";
 import Image from "next/image";
 import vector1 from "../src/img/vector-1.png";
 import vector2 from "../src/img/vector-2.png";
 import cross from "../src/img/cross.png";
 
-// Add a new prop `onSelectedItemsChange`
-export default function SortingSocial({ onSelectedItemsChange }) {
+const SortingSocial = forwardRef(({ onSelectedItemsChange }, ref) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
   const [selectedItems, setSelectedItems] = useState([]);
 
-  // Toggle the selection of items and invoke the callback
+  useImperativeHandle(ref, () => ({
+    resetItems: () => {
+      setSelectedItems([]);
+    },
+  }));
+
   const toggleItem = (item) => {
     setSelectedItems((prevItems) => {
       const newSelectedItems = prevItems.includes(item)
         ? prevItems.filter((i) => i !== item)
         : [...prevItems, item];
 
-      // Invoke the callback with the new selected items
       if (onSelectedItemsChange) {
         onSelectedItemsChange(newSelectedItems);
       }
@@ -119,4 +128,6 @@ export default function SortingSocial({ onSelectedItemsChange }) {
       )}
     </div>
   );
-}
+});
+
+export default SortingSocial;
