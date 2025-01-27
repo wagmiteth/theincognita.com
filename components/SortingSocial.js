@@ -130,4 +130,5 @@ const SortingSocial = forwardRef(({ onSelectedItemsChange }, ref) => {
   );
 });
 
+SortingSocial.displayName = "SortingSocial";
 export default SortingSocial;

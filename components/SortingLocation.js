@@ -134,4 +134,5 @@ const SortingLocation = forwardRef(
   }
 );
 
+SortingLocation.displayName = "SortingLocation";
 export default SortingLocation;

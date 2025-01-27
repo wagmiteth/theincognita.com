@@ -137,4 +137,5 @@ const SortingTags = forwardRef(({ tags = [], onSelectedItemsChange }, ref) => {
   );
 });
 
+SortingTags.displayName = "SortingTags";
 export default SortingTags;
