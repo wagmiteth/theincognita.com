@@ -24,7 +24,7 @@ const NewsItemGreen = ({ headerColor = "var(--color-green)" }) => {
         </div>
         <div className="description">
           <span>
-          Network School v2 reopens on March 1, 2025 on an island near Singapore with double the capacity for a year-long term.
+          Network School v2 reopens on March 1, 2025 on an island near Singapore with double the capacity for a year-long term. Places fill up fast.
           </span>
           <div><a href="https://ns.com/"target="_blank" rel="noopener noreferrer"> Apply now</a></div>
         </div>
