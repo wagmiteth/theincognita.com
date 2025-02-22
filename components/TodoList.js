@@ -20,7 +20,7 @@ const TodoList = ({ tasks }) => {
       id: 3,
       description: "Build recognition",
       completed: false,
-      uniqueText: "Comminicate with nodes, create website and social content",
+      uniqueText: "Communicate with nodes, create website and social content",
     },
     {
       id: 4,
@@ -66,4 +66,3 @@ const TodoList = ({ tasks }) => {
 };
 
 export default TodoList;
-
