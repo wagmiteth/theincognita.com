@@ -11,7 +11,7 @@ const Footer = () => {
       <hr className="w-full p-2 border-t-2 border-black" />{" "}
       {/* Add this line */}
       <div className="text-black text-center items-center justify-center p-4">
-        <p>Made with ❤️ by the Incognita community</p>
+        <p>Made with ❤️ by The Incognita community</p>
         <p>
           Help us at{" "}
           <a

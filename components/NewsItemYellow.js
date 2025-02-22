@@ -4,7 +4,7 @@ import Image from "next/image";
 import Timer from "../src/img/tdesign-time-5.png";
 
 const NewsItemYellow = ({ headerColor = "var(--color-yellow)" }) => {
-    return (
+  return (
     <div className="container hidden lg:block">
       <div className="header" style={{ backgroundColor: headerColor }}>
         <h3>NEWS</h3>{" "}
@@ -23,33 +23,42 @@ const NewsItemYellow = ({ headerColor = "var(--color-yellow)" }) => {
           <h3>Launch of Agent</h3>
         </div>
         <div className="description">
-        <span>
-        The Incognita community is planning for launch of an agent and token 2025. Join Discord for more info!
+          <span>
+            The Incognita community is planning to launch an agent and token in
+            2025. Join our Discord for more info!
           </span>
-          <div><a href="https://discord.gg/EyvF2fEqWT" target="_blank" rel="noopener noreferrer"> Read more</a></div>
+          <div>
+            <a
+              href="https://discord.gg/EyvF2fEqWT"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}
+              Learn more
+            </a>
+          </div>
         </div>
       </div>
 
       <style jsx>{`
-     .container {
-        border: 2px solid black;
-        margin-left: 40px;
-        border-radius: 6px;
-        background-color: var(--color-white);
-        max-width: 250px;
-        min-width: 222px;
-        font-family: "Bebas Neue", Helvetica;
-        transition: box-shadow 0.3s ease, transform 0.3s ease; // for smooth transition
-        box-shadow: 3px 2px 0px 2px black; // solid 4px shadow to the right
-      }
-      
-      .container:hover {
-        box-shadow: 1px 0px 0px black; // reduce the shadow to give pressed effect
-        transform: translateX(3px) translateY(3px);
+        .container {
+          border: 2px solid black;
+          margin-left: 40px;
+          border-radius: 6px;
+          background-color: var(--color-white);
+          max-width: 250px;
+          min-width: 222px;
+          font-family: "Bebas Neue", Helvetica;
+          transition:
+            box-shadow 0.3s ease,
+            transform 0.3s ease; // for smooth transition
+          box-shadow: 3px 2px 0px 2px black; // solid 4px shadow to the right
+        }
 
-
-      }
-      
+        .container:hover {
+          box-shadow: 1px 0px 0px black; // reduce the shadow to give pressed effect
+          transform: translateX(3px) translateY(3px);
+        }
 
         .header {
           background-color: var(--color-yellow);
@@ -57,11 +66,10 @@ const NewsItemYellow = ({ headerColor = "var(--color-yellow)" }) => {
           border-bottom: 2px solid black;
           padding: 10px 16px 6px 16px;
           text-align: left;
-
         }
 
-        .container-bottom{
-            margin: 16px 26px;
+        .container-bottom {
+          margin: 16px 26px;
         }
 
         .date {
@@ -84,10 +92,10 @@ const NewsItemYellow = ({ headerColor = "var(--color-yellow)" }) => {
           cursor: pointer;
         }
 
-        a{
-            font-family: 'Inria Sans', sans-serif;
-            color: var(--color-purple);
-            font-weight: bold;
+        a {
+          font-family: "Inria Sans", sans-serif;
+          color: var(--color-purple);
+          font-weight: bold;
         }
       `}</style>
     </div>

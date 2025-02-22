@@ -32,7 +32,7 @@ const PopupForm = ({ isOpen, onClose }) => {
               transform hover:translate-x-0.5 hover:translate-y-0.5
               shadow-custom hover:shadow-hover"
             >
-              <h2>Join Discord</h2>
+              <h2>Join Our Discord</h2>
             </button>
           </a>
         </div>

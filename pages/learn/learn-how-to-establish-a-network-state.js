@@ -2,18 +2,18 @@ import React from "react";
 import Image from "next/image";
 import learnNetworkState from "../../src/img/How-to-establish-a-Network-State.jpeg";
 import CTAButton from "../../components/CTAButton";
-import Head from 'next/head';
-
+import Head from "next/head";
 
 function networkstate() {
   return (
     <div className="HowToEstablishANetworkState-page">
       <div className="pt-40">
-      <Head>
-        <title>
-      Startup Society | Network Union | Network Archipelago | Network State
-    </title>
-      </Head>
+        <Head>
+          <title>
+            Startup Society | Network Union | Network Archipelago | Network
+            State
+          </title>
+        </Head>
         <Image
           src={learnNetworkState}
           alt="Black and white globe with nodes"
@@ -40,8 +40,8 @@ function networkstate() {
           society. This is a community of people who share a common interest in
           building something greater. The society can be founded by anyone with
           aspirations for something new, just like founding a company or a
-          cryptocurrency. The founder&apos;s legitimacy comes from whether others opt
-          to follow them.
+          cryptocurrency. The founder&apos;s legitimacy comes from whether
+          others opt to follow them.
         </p>
         <h2>Organize a Network Union</h2>
         <p>
@@ -117,7 +117,7 @@ function networkstate() {
           rel="noopener noreferrer"
         >
           <CTAButton bgColor="var(--color-white)">
-            <h2>Join Discord</h2>
+            <h2>Join Our Discord</h2>
           </CTAButton>
         </a>
       </div>

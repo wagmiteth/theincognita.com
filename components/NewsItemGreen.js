@@ -4,7 +4,7 @@ import Image from "next/image";
 import Timer from "../src/img/tdesign-time-5.png";
 
 const NewsItemGreen = ({ headerColor = "var(--color-green)" }) => {
-    return (
+  return (
     <div className="container hidden sm:block">
       <div className="header" style={{ backgroundColor: headerColor }}>
         <h3>NEWS</h3>{" "}
@@ -24,32 +24,38 @@ const NewsItemGreen = ({ headerColor = "var(--color-green)" }) => {
         </div>
         <div className="description">
           <span>
-          Network School v2 reopens on March 1, 2025 on an island near Singapore with double the capacity for a year-long term. Places fill up fast.
+            Network School v2 reopens on March 1, 2025 on an island near
+            Singapore with double the capacity for a year-long term. Places fill
+            up fast.
           </span>
-          <div><a href="https://ns.com/"target="_blank" rel="noopener noreferrer"> Apply now</a></div>
+          <div>
+            <a href="https://ns.com/" target="_blank" rel="noopener noreferrer">
+              {" "}
+              Apply Now
+            </a>
+          </div>
         </div>
       </div>
 
       <style jsx>{`
-     .container {
-        border: 2px solid black;
-        margin-left: 40px;
-        border-radius: 6px;
-        background-color: var(--color-white);
-        max-width: 250px;
-        min-width: 222px;
-        font-family: "Bebas Neue", Helvetica;
-        transition: box-shadow 0.3s ease, transform 0.3s ease; // for smooth transition
-        box-shadow: 3px 2px 0px 2px black; // solid 4px shadow to the right
-      }
-      
-      .container:hover {
-        box-shadow: 1px 0px 0px black; // reduce the shadow to give pressed effect
-        transform: translateX(3px) translateY(3px);
+        .container {
+          border: 2px solid black;
+          margin-left: 40px;
+          border-radius: 6px;
+          background-color: var(--color-white);
+          max-width: 250px;
+          min-width: 222px;
+          font-family: "Bebas Neue", Helvetica;
+          transition:
+            box-shadow 0.3s ease,
+            transform 0.3s ease; // for smooth transition
+          box-shadow: 3px 2px 0px 2px black; // solid 4px shadow to the right
+        }
 
-
-      }
-      
+        .container:hover {
+          box-shadow: 1px 0px 0px black; // reduce the shadow to give pressed effect
+          transform: translateX(3px) translateY(3px);
+        }
 
         .header {
           background-color: var(--color-yellow);
@@ -57,11 +63,10 @@ const NewsItemGreen = ({ headerColor = "var(--color-green)" }) => {
           border-bottom: 2px solid black;
           padding: 10px 16px 6px 16px;
           text-align: left;
-
         }
 
-        .container-bottom{
-            margin: 16px 26px;
+        .container-bottom {
+          margin: 16px 26px;
         }
 
         .date {
@@ -84,10 +89,10 @@ const NewsItemGreen = ({ headerColor = "var(--color-green)" }) => {
           cursor: pointer;
         }
 
-        a{
-            font-family: 'Inria Sans', sans-serif;
-            color: var(--color-purple);
-            font-weight: bold;
+        a {
+          font-family: "Inria Sans", sans-serif;
+          color: var(--color-purple);
+          font-weight: bold;
         }
       `}</style>
     </div>
