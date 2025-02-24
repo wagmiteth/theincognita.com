@@ -47,7 +47,7 @@ const Home = () => {
                 rel="noopener noreferrer"
               >
                 <CTAButton bgColor="var(--color-white)">
-                  <h2>Join Discord</h2>
+                  <h2>Join Our Discord</h2>
                 </CTAButton>
               </a>
             </div>
@@ -74,14 +74,14 @@ const Home = () => {
         <div className="lower-col">
           <div className="lower-left-col flex items-center justify-center">
             <p>
-              The Incognita DAO are building a open source database for web3
+              The Incognita DAO are building an open source database for web3
               communities. Search and find your future Network state or join the
               DAO to help us scale the concept.
               <br />
               <br />
               We are currently mapping 97 nodes.
-              <a href="https://x.com/incognitaeth"> Subscribe</a> for updates
-              or <a href="https://discord.gg/EyvF2fEqWT"> apply </a>  to get listed.
+              <a href="https://x.com/incognitaeth"> Subscribe</a> for updates or{" "}
+              <a href="https://discord.gg/EyvF2fEqWT"> apply </a> to get listed.
             </p>
           </div>
           <div className="lower-middle-col hidden sm:block"></div>
