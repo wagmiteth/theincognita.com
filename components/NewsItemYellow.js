@@ -17,24 +17,23 @@ const NewsItemYellow = ({ headerColor = "var(--color-yellow)" }) => {
             width={23} // Provide width and height
             height={21}
           />
-          <h5>14 Jan 2025</h5>
+          <h5>11 May 2025</h5>
         </div>
         <div className="title">
-          <h3>Launch of Agent</h3>
+          <h3>NS Fellowship</h3>
         </div>
         <div className="description">
           <span>
-            The Incognita community is planning to launch an agent and token in
-            2025. Join our Discord for more info!
+          ns.com launching a new $100k fellowship for founders and creators, open to anyone from any country.
           </span>
           <div>
             <a
-              href="https://discord.gg/EyvF2fEqWT"
+              href="https://ns.com/apply"
               target="_blank"
               rel="noopener noreferrer"
             >
               {" "}
-              Learn more
+              Apply Now
             </a>
           </div>
         </div>
