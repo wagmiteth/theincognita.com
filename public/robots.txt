@@ -1,3 +1,9 @@
+# *
 User-agent: *
-Disallow: /some-secret-page/
 Allow: /
+
+# Host
+Host: https://theincognita.com
+
+# Sitemaps
+Sitemap: https://theincognita.com/sitemap.xml
