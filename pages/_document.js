@@ -12,7 +12,11 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-   
+          <script
+            src="https://analytics.ahrefs.com/analytics.js"
+            data-key="xBCK3pOisDLFoy7Xr5mCbw"
+            async
+          ></script>
         </Head>
         <body>
           <Main />
