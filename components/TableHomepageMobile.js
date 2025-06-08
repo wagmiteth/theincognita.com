@@ -10,6 +10,7 @@ import SortingLocation from "./SortingLocation";
 import SortingSocial from "./SortingSocial";
 import SortingTags from "./SortingTags";
 import { fetchTableNames } from "../utils/fetchAirtableData";
+import { Skeleton } from "./ui/skeleton";
 
 export default function TableHomepageMobile() {
   const [tableData, setTableData] = useState([]);
@@ -19,6 +20,7 @@ export default function TableHomepageMobile() {
   const [selectedLocationFilters, setSelectedLocationFilters] = useState([]);
   const [uniqueLocations, setUniqueLocations] = useState([]);
   const [uniqueTags, setUniqueTags] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const gridColumns = "auto auto";
   const locationRef = useRef();
@@ -27,6 +29,7 @@ export default function TableHomepageMobile() {
 
   useEffect(() => {
     const fetchData = async () => {
+      setIsLoading(true);
       const data = await fetchTableNames();
       setTableData(data);
       setFilteredData(data);
@@ -58,6 +61,7 @@ export default function TableHomepageMobile() {
           a.localeCompare(b, undefined, { sensitivity: "base" })
         )
       );
+      setIsLoading(false);
     };
 
     fetchData();
@@ -121,6 +125,37 @@ export default function TableHomepageMobile() {
     socialRef.current?.resetItems();
     tagsRef.current?.resetItems();
   };
+
+  if (isLoading) {
+    return (
+      <div className="lg:hidden mx-auto mt-12" style={{ maxWidth: "1100px" }}>
+        <div className="flex justify-between bg-background items-center p-3">
+          {/* Skeleton for filter row */}
+          {Array(4).fill().map((_, index) => (
+            <Skeleton key={`filter-skeleton-${index}`} className="h-10 w-16" />
+          ))}
+        </div>
+
+        {/* Skeleton for data rows */}
+        {Array(5).fill().map((_, rowIndex) => (
+          <div
+            key={`row-skeleton-${rowIndex}`}
+            className="grid grid-cols-6 gap-3 p-3 mt-4 bg-white border-[2.5px] rounded-md shadow-custom2 justify-between"
+            style={{ gridTemplateColumns: gridColumns }}
+          >
+            <div className="flex flex-col space-y-2 w-full">
+              <Skeleton className="h-8 w-full" />
+              <Skeleton className="h-16 w-full" />
+              <Skeleton className="h-6 w-3/4" />
+              <Skeleton className="h-6 w-1/2" />
+              <Skeleton className="h-6 w-2/3" />
+            </div>
+            <Skeleton className="h-10 w-16" />
+          </div>
+        ))}
+      </div>
+    );
+  }
 
   return (
     <div className="lg:hidden mx-auto mt-12" style={{ maxWidth: "1100px" }}>
