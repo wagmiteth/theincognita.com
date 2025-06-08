@@ -11,6 +11,7 @@ import SortingTags from "./SortingTags";
 import { fetchTableNames } from "../utils/fetchAirtableData";
 import TableTags from "./TableTags";
 import RenderGrid from "./RenderGrid";
+import { Skeleton } from "./ui/skeleton";
 
 export default function TableHomepageDesktop() {
   const [tableData, setTableData] = useState([]);
@@ -153,7 +154,45 @@ export default function TableHomepageDesktop() {
   };
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="hidden lg:block mx-auto mt-12 max-w-1100">
+        <div
+          className="grid grid-cols-6 gap-3 p-3 bg-background items-center"
+          style={{ gridTemplateColumns: gridColumns }}
+        >
+          {/* Skeleton for filter row */}
+          {Array(6).fill().map((_, index) => (
+            <Skeleton key={`filter-skeleton-${index}`} className="h-10 w-full" />
+          ))}
+        </div>
+
+        {/* Skeleton for header row */}
+        <div
+          className="grid grid-cols-6 gap-3 p-3 mt-4 bg-white border-[2.5px]"
+          style={{ gridTemplateColumns: gridColumns }}
+        >
+          {Array(6).fill().map((_, index) => (
+            <Skeleton key={`header-skeleton-${index}`} className="h-6 w-full" />
+          ))}
+        </div>
+
+        {/* Skeleton for data rows */}
+        {Array(5).fill().map((_, rowIndex) => (
+          <div
+            key={`row-skeleton-${rowIndex}`}
+            className="grid grid-cols-6 gap-3 p-3 mt-4 bg-white border-[2.5px] rounded-md shadow-custom2"
+            style={{ gridTemplateColumns: gridColumns }}
+          >
+            {Array(6).fill().map((_, colIndex) => (
+              <Skeleton 
+                key={`cell-skeleton-${rowIndex}-${colIndex}`} 
+                className={`h-${colIndex === 1 ? '16' : '10'} w-full`} 
+              />
+            ))}
+          </div>
+        ))}
+      </div>
+    );
   }
 
   return (
